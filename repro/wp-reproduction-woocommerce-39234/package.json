@@ -1,0 +1,21 @@
+{
+  "name": "@johnrom/wp-reproduction-woocommerce-39234",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "16.20.2"
+  },
+  "scripts": {
+    "start": "wp-env start",
+    "setup:node": "npm install -g cross-var && cross-var nvm install $npm_package_engines_node && cross-var nvm use $npm_package_engines_node && npm install",
+    "populate:product": "wp-env run cli -- wp wc product create --user=\"1\" --regular_price=\"11.00\" --name=\"Test Product 1\"",
+    "populate:coupon": "wp-env run cli -- wp wc shop_coupon create --user=\"1\" --code=\"dynamic_coupon\" --discount_type=\"repro_dynamic_cart\"",
+    "populate:shop_order": "wp-env run cli -- wp repro populate",
+    "setup": "npm run setup:node"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/env": "^8.11.0"
+  }
+}
