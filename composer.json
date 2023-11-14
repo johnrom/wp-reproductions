@@ -1,0 +1,23 @@
+{
+  "name": "johnrom/wp-reproductions",
+  "description": "Reproducing issues from WordPress and WooCommerce",
+  "type": "metapackage",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "John Rom",
+      "email": "john@nimblelight.com"
+    }
+  ],
+  "require-dev": {
+    "php-stubs/wp-cli-stubs": "^2.9",
+    "php-stubs/wordpress-stubs": "^6.4",
+    "php-stubs/woocommerce-stubs": "^8.2"
+  }
+}

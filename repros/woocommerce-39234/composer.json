@@ -1,0 +1,28 @@
+{
+  "name": "johnrom/wp-repro-woocommerce-39234",
+  "description": "Reproducing https://github.com/woocommerce/woocommerce/pull/39234",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Johnrom\\WpReproWoocommerce39234\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "John Rom",
+      "email": "john@nimblelight.com"
+    }
+  ],
+  "require-dev": {
+    "php-stubs/wp-cli-stubs": "^2.9",
+    "php-stubs/wordpress-stubs": "^6.4",
+    "php-stubs/woocommerce-stubs": "^8.2"
+  }
+}

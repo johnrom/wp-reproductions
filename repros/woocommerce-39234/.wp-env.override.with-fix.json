@@ -1,0 +1,7 @@
+{
+    "plugins": [
+        ".",
+        "./woocommerce-with-fix",
+        "https://downloads.wordpress.org/plugin/wp-mail-logging.zip"
+    ]
+}

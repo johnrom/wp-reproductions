@@ -8,10 +8,10 @@
   "scripts": {
     "start": "wp-env start",
     "setup:node": "npm install -g cross-var && cross-var nvm install $npm_package_engines_node && cross-var nvm use $npm_package_engines_node && npm install",
-    "populate:product": "wp-env run cli -- wp wc product create --user=\"1\" --regular_price=\"11.00\" --name=\"Test Product 1\"",
-    "populate:coupon": "wp-env run cli -- wp wc shop_coupon create --user=\"1\" --code=\"dynamic_coupon\" --discount_type=\"repro_dynamic_cart\"",
-    "populate:shop_order": "wp-env run cli -- wp repro populate",
-    "setup": "npm run setup:node"
+    "populate": "wp-env run cli -- wp repro_39234 populate",
+    "clean": "wp-env run cli -- wp repro_39234 clean",
+    "setup": "npm run setup:node",
+    "destroy": "wp-env destroy"
   },
   "author": "",
   "license": "ISC",
