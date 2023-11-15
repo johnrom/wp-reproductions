@@ -23,13 +23,21 @@ Stack trace:
 
 NMBL WP Reproductions uses [`@wordpress/env`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/).
 
-- Install Docker, NodeJS, and other requirements as described in [the `@wordpress/env` documentation](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#prerequisites).
+- Install Docker, NodeJS, PHP, and other requirements as described in [the `@wordpress/env` documentation](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#prerequisites).
+  - If have installed `nvm`, run `npm run setup`.
+  - Otherwise, run `npm install` and `composer install` with valid versions of NodeJS / NPM / PHP installed.
 - Pull this repository and navigate to this folder (`repros/woocommerce-39234`) in a command line.
 - Run `npm start` to boot up `@wordpress/env`.
+  - Or to use xdebug:
+    - Run `npm run debug`.
+    - Run the `Woo PR 39234: Listen for XDebug` launch task in VS Code.
+    - In VS Code's debug breakpoints pane, check `Everything`.
 - Run `npm run populate`, which runs a WP-CLI command which reproduces the issue.
-  - To see steps for reproducing the issue outside of NMBL WP Reproductions, see the following section.
+  - An error will be returned from `npm start`, or an exception breakpoint will be hit by `npm run debug`.
+  - To see steps for reproducing the issue outside of NMBL WP Reproductions, see [Reproducing the issue in another environment](#reproducing-the-issue-in-another-environment).
 - To see the issue fixed:
-  - Build a copy of WooCommerce from [the PR](https://github.com/woocommerce/woocommerce/pull/39234), and publish it to the directory `./woocommerce-with-fix`.
+  - Run `npm run apply-fix` and re-run `npm start` or `npm debug`.
+    - This will extract the fixed version of WooCommerce and override the plugin in WP Env.
   - Copy `.wp-env.override.with-fix.json` to `.wp-env.override.json`.
 
 ## Reproducing the issue in another environment.

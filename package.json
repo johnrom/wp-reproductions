@@ -1,0 +1,29 @@
+{
+  "name": "@nimblelight/nmbl-wp-reproductions",
+  "version": "1.0.0",
+  "description": "Reproducing WP and Plugin issues",
+  "homepage": "https://github.com/nimblelight/nmbl-wp-reproductions#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nimblelight/nmbl-wp-reproductions.git"
+  },
+  "author": {
+    "name": "John Rom @ NMBL",
+    "email": "opensource@nimblelight.com",
+    "url": "https://nmbl.lt"
+  },
+  "license": "MIT",
+  "scripts": {
+    "setup": "composer install && npm run setup:wc-pr-39234",
+    "clean": "rm -rf ./vendor && npm run clean:wc-pr-39234",
+    "destroy": "npm run destroy:wc-pr-39234",
+    "setup:wc-pr-39234": "cd repros/wc-pr-39234 && npm run setup",
+    "clean:wc-pr-39234": "cd repros/wc-pr-39234 && npm run clean",
+    "destroy:wc-pr-39234": "cd repros/wc-pr-39234 && npm run destroy",
+    "start": "echo \"Error: run commands from the desired repro folder under repros/\" && exit 1",
+    "debug": "echo \"Error: run commands from the desired repro folder under repros/\" && exit 1",
+    "populate": "echo \"Error: run commands from the desired repro folder under repros/\" && exit 1",
+    "apply-fix": "echo \"Error: run commands from the desired repro folder under repros/\" && exit 1",
+    "remove-fix": "echo \"Error: run commands from the desired repro folder under repros/\" && exit 1"
+  }
+}

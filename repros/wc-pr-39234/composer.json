@@ -1,0 +1,35 @@
+{
+  "name": "nimblelight/wp-repro-wc-pr-39234",
+  "description": "Reproducing https://github.com/woocommerce/woocommerce/pull/39234",
+  "homepage": "https://github.com/nimblelight/nmbl-wp-reproductions/tree/main/repros/wc-pr-39234",
+  "authors": [
+    {
+      "name": "John Rom @ NMBL",
+      "email": "opensource@nimblelight.com"
+    }
+  ],
+  "license": "MIT",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Nimblelight\\WP_Repro_WC_PR_39234\\": "src/"
+    }
+  },
+  "require-dev": {
+    "php-stubs/wp-cli-stubs": "^2.9",
+    "php-stubs/wordpress-stubs": "^6.4",
+    "php-stubs/woocommerce-stubs": "^8.2",
+    "wpackagist-plugin/woocommerce":"8.3.0-rc.2"
+  },
+  "extra": {
+    "installer-paths": {
+      "{$name}/": ["type:wordpress-plugin"]
+    }
+  }
+}

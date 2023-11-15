@@ -1,0 +1,35 @@
+{
+  "name": "@nimblelight/wp-repro-wc-pr-39234",
+  "version": "1.0.0",
+  "description": "Reproducing https://github.com/woocommerce/woocommerce/pull/39234",
+  "homepage": "https://github.com/nimblelight/nmbl-wp-reproductions/tree/main/repros/wc-pr-39234",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nimblelight/nmbl-wp-reproductions.git",
+    "directory": "repros/wc-pr-39234"
+  },
+  "author": {
+    "name": "John Rom @ NMBL",
+    "email": "opensource@nimblelight.com",
+    "url": "https://nmbl.lt"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "16.20.2"
+  },
+  "scripts": {
+    "setup": "npm run setup:node && npm run setup:php",
+    "start": "wp-env start --update",
+    "debug": "wp-env start --xdebug --update",
+    "populate": "wp-env run cli -- wp repro_39234 populate",
+    "clean": "npm run remove-fix && rm -rf ./node_modules/ && rm -rf ./vendor && rm -rf ./woocommerce",
+    "destroy": "wp-env destroy",
+    "apply-fix": "unzip -qo ./woocommerce-with-fix.zip && cp ./.wp-env.override.with-fix.json ./.wp-env.override.json",
+    "remove-fix": "rm -rf ./woocommerce-with-fix && rm -f ./.wp-env.override.json",
+    "setup:node": "npm install -g cross-var && cross-var nvm install $npm_package_engines_node && cross-var nvm use $npm_package_engines_node && npm install",
+    "setup:php": "composer install"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^8.11.0"
+  }
+}

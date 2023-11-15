@@ -1,18 +1,19 @@
 {
-  "name": "johnrom/wp-reproductions",
+  "name": "nimblelight/nmbl-wp-reproductions",
   "description": "Reproducing issues from WordPress and WooCommerce",
+  "homepage": "https://github.com/nimblelight/nmbl-wp-reproductions",
+  "authors": [
+    {
+      "name": "John Rom @ NMBL",
+      "email": "opensource@nimblelight.com"
+    }
+  ],
+  "license": "MIT",
   "type": "metapackage",
   "repositories": [
     {
       "type": "composer",
       "url": "https://wpackagist.org"
-    }
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "John Rom",
-      "email": "john@nimblelight.com"
     }
   ],
   "require-dev": {

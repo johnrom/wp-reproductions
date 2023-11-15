@@ -1,8 +1,8 @@
 <?php
 
-namespace Johnrom\WpReproWoocommerce39234;
+namespace Nimblelight\WP_Repro_WC_PR_39234;
 
-class WP_Repro_39234_Command {
+class WP_Repro_WC_PR_39234_Command {
     /**
      * Populate a shop order with two coupons.
      *
@@ -40,6 +40,7 @@ class WP_Repro_39234_Command {
 
 		$order->add_item( $coupon_order_item_1 );
 		$order->add_item( $coupon_order_item_2 );
+		$order->save();
 
 		// Recalculate totals and taxes.
 		$order->recalculate_coupons();
