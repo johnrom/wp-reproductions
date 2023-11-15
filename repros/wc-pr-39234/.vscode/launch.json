@@ -5,12 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Listen for XDebug (with fix)",
+      "name": "Woo PR 39234: Listen for XDebug",
       "type": "php",
       "request": "launch",
       "port": 9003,
       "pathMappings": {
-        "/var/www/html/wp-content/plugins/woocommerce": "${workspaceFolder}/woocommerce-with-fix"
+        "/var/www/html/wp-content/plugins/wc-pr-39234": "${workspaceFolder}/",
+        "/var/www/html/wp-content/plugins/woocommerce": "${workspaceFolder}/woocommerce",
+        "/var/www/html/wp-content/plugins/woocommerce-with-fix": "${workspaceFolder}/woocommerce-with-fix"
       }
     }
   ]
