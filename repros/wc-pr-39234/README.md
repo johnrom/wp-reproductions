@@ -24,28 +24,27 @@ Stack trace:
 NMBL WP Reproductions uses [`@wordpress/env`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/).
 
 - Install Docker, NodeJS, PHP, and other requirements as described in [the `@wordpress/env` documentation](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#prerequisites).
-- Pull this repository and navigate to this folder (`repros/woocommerce-39234`) in a command line.
-  - If you have installed `nvm`, run `npm run setup`.
+- Pull this repository and navigate to this folder in a command line.
+  - If you have installed `nvm`, run `npm run setup` (with admin privileges if your nvm setup requires it).
   - Otherwise, run `npm install` and `composer install` with valid versions of NodeJS / NPM / PHP installed.
 - Run `npm run populate`, which runs a WP-CLI command which reproduces the issue.
-  - An error will be returned from `npm start`, or an exception breakpoint will be hit by `npm run debug`.
   - To see steps for reproducing the issue outside of NMBL WP Reproductions, see [Reproducing the issue in another environment](#reproducing-the-issue-in-another-environment).
 
 ### Debugging the project
 
 - Run `npm run debug` to boot up `@wordpress/env` with `xdebug`.
 - Run the `Woo PR 39234: Listen for XDebug` launch task in VS Code.
-- In VS Code's debug breakpoints pane, check `Everything` to break on all exceptions, including the one targeted by this repro.
+- In VS Code's debug breakpoints pane, check `Everything` to break on all exceptions, including the one targeted by this repro.,
+- Run `npm run populate`, and an exception breakpoint will be hit in VS Code.
 
 ### Validating the fix
 
-The fix can be applied in this repo by using `git LFS` and downloading the `woocommerce-with-fix.zip` file.
+The fix can be tested in this repo by following these steps:
 
 - Make sure `woocommerce-with-fix.zip` was downloaded with git LFS.
-- Run `npm run apply-fix` and re-run `npm start` or `npm debug`.
+- Run `npm run apply-fix`.
   - This will extract the fixed version of WooCommerce and override the plugin in WP Env.
-- Copy `.wp-env.override.with-fix.json` to `.wp-env.override.json`.
-- Run `npm start` or `npm run debug` again to start the site with the fix.
+- Re-run `npm start` or `npm run debug`.
 - Run `npm run populate` to replay the command and generate an order with two of the same coupon.
 - Log in with `admin/password` as described in [the `@wordpress/env` documentation](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env) to view the order.
 
