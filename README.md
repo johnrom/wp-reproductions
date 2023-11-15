@@ -4,4 +4,4 @@ NMBL WP Reproductions uses [`@wordpress/env`](https://developer.wordpress.org/bl
 
 ## Reproductions
 
-- [WooCommerce PR 39234: Fix `TypeError` in `WC_Discounts->apply_coupons()` when being called a second time.](repros/wc-pr-39234)
+- [WooCommerce PR 39234: Fix `TypeError` in `WC_Discounts->apply_coupons()` when being called a second time.](repros/wc-pr-39234#readme)
